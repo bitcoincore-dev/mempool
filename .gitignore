@@ -1,1 +1,6 @@
 sitemap
+data
+docker-compose.yml
+mysql
+electrs
+.DS_Store
