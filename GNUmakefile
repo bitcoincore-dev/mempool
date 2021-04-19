@@ -35,7 +35,7 @@ mempool: init
 	@echo ''
 	docker-compose up --force-recreate --always-recreate-deps
 	@echo ''
-.PHONY: electrs
+.PHONY: electrum
 electrum:
 	#REF: https://hub.docker.com/r/beli/electrum
 	@echo ''
