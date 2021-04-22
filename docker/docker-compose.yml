@@ -65,3 +65,4 @@ services:
       MYSQL_USER: "mempool"
       MYSQL_PASSWORD: "mempool"
       MYSQL_ROOT_PASSWORD: "admin"
+

@@ -7,6 +7,8 @@ EXPOSE 50002
 ENV VERSION 4.0.9
 RUN set -x \
         && apt-get update \
+    && apt-get install build-essential libssl-dev libffi-dev python-dev \
+    && pip install cryptography \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends gpg gpg-agent dirmngr \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends wget xpra python3-pyqt5 python3-wheel python3-pip python3-setuptools libsecp256k1-0 libsecp256k1-dev python3-numpy python3-dev build-essential \
 	&& wget -O /tmp/Electrum-${VERSION}.tar.gz https://download.electrum.org/${VERSION}/Electrum-${VERSION}.tar.gz \
