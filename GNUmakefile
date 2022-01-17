@@ -12,6 +12,7 @@ endif
 
 .PHONY: help
 help:
+	@echo ${ELECTRUM_IMAGE}
 	@echo ''
 	@echo ''
 	@echo '	Usage: make [COMMAND]'
@@ -39,7 +40,9 @@ electrum:
 	#REF: https://hub.docker.com/r/beli/electrum
 	@echo ''
 	docker build -f docker/electrum/Dockerfile -t electrum .
+	@echo "$(shell docker images | awk '/electrum/' | awk ' {print $3}' | awk 'NR==1')"
 	@echo ''
+
 .PHONY: all
 all: init
 	make mempool electrum
