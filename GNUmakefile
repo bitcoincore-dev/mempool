@@ -19,7 +19,7 @@ help:
 	@echo '		make all		# build init mempool and electrs'
 	@echo '		make init		# setup some useful configs'
 	@echo '		make mempool		# build q dockerized mempool.space'
-	@echo '		make electrs		# build a docker electrs image'
+	@echo '		make electrum		# build a docker electrum image'
 	@echo ''
 
 .PHONY: init
@@ -38,10 +38,10 @@ mempool: init
 electrum:
 	#REF: https://hub.docker.com/r/beli/electrum
 	@echo ''
-	docker build -f docker/electrum/Dockerfile .
+	docker build -f docker/electrum/Dockerfile -t electrum .
 	@echo ''
 .PHONY: all
 all: init
-	make mempool
+	make mempool electrum
 #######################
 -include Makefile
